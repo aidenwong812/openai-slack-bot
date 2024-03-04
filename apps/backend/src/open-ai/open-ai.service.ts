@@ -43,6 +43,6 @@ export class OpenAiService {
       { role: 'user', content: message },
     );
 
-    return threadMessages;
+    return threadMessages.content.toString();
   }
 }

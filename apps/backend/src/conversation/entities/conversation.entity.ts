@@ -20,11 +20,10 @@ export class Conversation {
   id: number;
 
   @Field({ description: 'The user of conversation' })
-  // @Column({ nullable: true })
   @ManyToOne(() => User, (user) => user.conversation)
   user: Relation<User>;
 
-  @Field({ description: 'The title of the conversation' })
+  @Field({ description: 'The client of the conversation' })
   @Column({ nullable: true })
   client: string;
 
@@ -33,7 +32,7 @@ export class Conversation {
   isActive: boolean;
 
   @Field({ description: 'The OpenAI thread associated with this conversation' })
-  @Column({ nullable: true })
+  @Column()
   openAIThreadId: string;
 
   @OneToMany(() => Message, (message) => message.id)

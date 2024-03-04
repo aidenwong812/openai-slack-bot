@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { UsersService } from '../users/users.service';
 import { Request } from 'express';
+import { UsersService } from '../users/users.service';
 import { SupabaseService } from '../third-party/supabase/supabase.service';
 
 @Injectable()

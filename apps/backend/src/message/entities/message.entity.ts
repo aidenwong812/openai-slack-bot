@@ -27,13 +27,20 @@ export class Message {
   id: number;
 
   @Field({ description: 'The user of conversation' })
-  // @Column({ nullable: true })
   @ManyToOne(() => Conversation, (conversation) => conversation.id)
   conversation: Relation<Conversation>;
 
   @Field({ description: 'The content of the message' })
   @Column({ nullable: true })
   content: string;
+
+  @Field({ description: 'The user role' })
+  @Column({
+    type: 'enum',
+    enum: MessageRole,
+    default: MessageRole.User,
+  })
+  role: MessageRole;
 
   @CreateDateColumn()
   createdAt: Date;
