@@ -55,7 +55,7 @@ export class ConversationService {
 
   async createConversation(user: User) {
     try {
-      const newConversation = await this.conversationRepository.create({
+      const newConversation = this.conversationRepository.create({
         user: user,
         client: 'sms',
         isActive: true,

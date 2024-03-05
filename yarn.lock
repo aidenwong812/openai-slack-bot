@@ -1451,6 +1451,55 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@golevelup/nestjs-common@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@golevelup/nestjs-common@npm:2.0.0"
+  dependencies:
+    lodash: "npm:^4.17.21"
+    nanoid: "npm:^3.3.6"
+  peerDependencies:
+    "@nestjs/common": ^10.x
+  checksum: 10c0/46b6d78f54426b7db35532791493e323126324b9bc2b011b9cd1f1da8114a767ce29fe26c5fe05c31904a55be6578c98913f7d8dab31f630e9b63c04b22d6596
+  languageName: node
+  linkType: hard
+
+"@golevelup/nestjs-discovery@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@golevelup/nestjs-discovery@npm:4.0.0"
+  dependencies:
+    lodash: "npm:^4.17.21"
+  peerDependencies:
+    "@nestjs/common": ^10.x
+    "@nestjs/core": ^10.x
+  checksum: 10c0/60d85e5cad74e424995dd6c0bfb70f8749f9e1db21ff803b8bcf9d13089df2112ba88b1ed07554b3d386d9b43d3256f4a7da56aca5e039043080b63726066e43
+  languageName: node
+  linkType: hard
+
+"@golevelup/nestjs-modules@npm:^0.7.1":
+  version: 0.7.1
+  resolution: "@golevelup/nestjs-modules@npm:0.7.1"
+  dependencies:
+    lodash: "npm:^4.17.21"
+  peerDependencies:
+    "@nestjs/common": ^10.x
+    rxjs: ^7.x
+  checksum: 10c0/68b8d81aca60b92918c50409a1bf4699ca5aac18d8c77364f8acb32e71828ad8ef7f44e4c26c3929ab447e24ace29eb96a1e3c143f3aec0f209ec3d923360502
+  languageName: node
+  linkType: hard
+
+"@golevelup/nestjs-stripe@npm:^0.6.5":
+  version: 0.6.5
+  resolution: "@golevelup/nestjs-stripe@npm:0.6.5"
+  dependencies:
+    "@golevelup/nestjs-common": "npm:^2.0.0"
+    "@golevelup/nestjs-discovery": "npm:^4.0.0"
+    "@golevelup/nestjs-modules": "npm:^0.7.1"
+  peerDependencies:
+    stripe: ^11.12.0
+  checksum: 10c0/ae555495da4d1f33882298a91aaedf66317404cb2f76f1ca0f6df45f1438d8dbe5f9899a24a4efa889ece9c9591a2d2bac8438bdfe39d70219393dd8fdc43348
+  languageName: node
+  linkType: hard
+
 "@google-cloud/firestore@npm:^6.8.0":
   version: 6.8.0
   resolution: "@google-cloud/firestore@npm:6.8.0"
@@ -2935,6 +2984,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:>=8.1.0":
+  version: 20.11.24
+  resolution: "@types/node@npm:20.11.24"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10c0/5a62225eb4797b41e6953f9c08c4611d607b5422ddd153312fc81ed6ed37115228ae27e3e3caa1a3bf52d88310306a196ba1cfbd8b2ec918a20f64d80dfa22c9
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:^18.11.18":
   version: 18.19.18
   resolution: "@types/node@npm:18.19.18"
@@ -3932,6 +3990,7 @@ __metadata:
     "@apollo/server": "npm:^4.9.5"
     "@as-integrations/fastify": "npm:^2.1.1"
     "@fastify/static": "npm:^6.12.0"
+    "@golevelup/nestjs-stripe": "npm:^0.6.5"
     "@nestjs/apollo": "npm:^12.0.10"
     "@nestjs/axios": "npm:^3.0.1"
     "@nestjs/cli": "npm:^10.0.0"
@@ -3977,6 +4036,7 @@ __metadata:
     reflect-metadata: "npm:0.1.13"
     rxjs: "npm:7.8.1"
     source-map-support: "npm:^0.5.21"
+    stripe: "npm:^14.19.0"
     supertest: "npm:^6.3.3"
     ts-jest: "npm:^29.1.0"
     ts-loader: "npm:^9.4.3"
@@ -8872,7 +8932,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.3.7":
+"nanoid@npm:^3.3.6, nanoid@npm:^3.3.7":
   version: 3.3.7
   resolution: "nanoid@npm:3.3.7"
   bin:
@@ -10899,6 +10959,16 @@ __metadata:
   version: 2.0.1
   resolution: "strip-json-comments@npm:2.0.1"
   checksum: 10c0/b509231cbdee45064ff4f9fd73609e2bcc4e84a4d508e9dd0f31f70356473fde18abfb5838c17d56fb236f5a06b102ef115438de0600b749e818a35fbbc48c43
+  languageName: node
+  linkType: hard
+
+"stripe@npm:^14.19.0":
+  version: 14.19.0
+  resolution: "stripe@npm:14.19.0"
+  dependencies:
+    "@types/node": "npm:>=8.1.0"
+    qs: "npm:^6.11.0"
+  checksum: 10c0/2ded93390fbdc55cafe265e8311746b75706f0eb9ec0fa259b8558aefa44f06b5fd4b5281ee27f1da8b2c0b943488f8a6cf952766cefdd7c851602880f8a0aca
   languageName: node
   linkType: hard
 

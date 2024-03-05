@@ -32,7 +32,7 @@ export class Conversation {
   isActive: boolean;
 
   @Field({ description: 'The OpenAI thread associated with this conversation' })
-  @Column()
+  @Column({ nullable: true })
   openAIThreadId: string;
 
   @OneToMany(() => Message, (message) => message.id)

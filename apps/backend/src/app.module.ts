@@ -13,10 +13,15 @@ import { TwilioModule } from './third-party/twilio/twilio.module';
 import { ConversationModule } from './conversation/conversation.module';
 import { MessageModule } from './message/message.module';
 import { OpenAiModule } from './open-ai/open-ai.module';
+import { PaymentModule } from './payment/payment.module';
+import configs from 'config';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      load: [configs],
+    }),
     DatabaseModule,
     AuthModule,
     UsersModule,
@@ -33,6 +38,7 @@ import { OpenAiModule } from './open-ai/open-ai.module';
     ConversationModule,
     MessageModule,
     OpenAiModule,
+    PaymentModule,
   ],
   controllers: [AppController],
   providers: [AppService],

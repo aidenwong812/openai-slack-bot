@@ -7,7 +7,7 @@ export class OpenAiService {
   private readonly openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
   });
-  private readonly ASSISTANT_ID = 'the assistant id';
+  private readonly ASSISTANT_ID = 'asst_SD7eHjIbdwcHqDsv2NJm1lLX';
 
   async createNewThread() {
     const thread = await this.openai.beta.threads.create();
@@ -22,13 +22,15 @@ export class OpenAiService {
     if (run.status === 'completed') return;
 
     const timeout = 1000;
-    const timer = setTimeout(async () => {
-      run = await this.openai.beta.threads.runs.retrieve(threadId, run.id);
-      if (run.status === 'completed') {
-        clearTimeout(timer);
-        return;
-      }
-    }, timeout);
+    await new Promise((resolve) => setTimeout(resolve, timeout));
+
+    // Retrieve the latest status of the run.
+    run = await this.openai.beta.threads.runs.retrieve(threadId, run.id);
+
+    // If the run's status is not 'completed', recursively call this method again.
+    if (run.status !== 'completed') {
+      await this.waitForRunToComplete(threadId, run);
+    }
   }
 
   async sendMessage(message: string, user: User, threadId: string) {
